@@ -1,7 +1,13 @@
+using DataLibrary.Data;
+using DataLibrary.Db;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IOrderData, OrderData>();
+builder.Services.AddSingleton<IFoodData, FoodData>();
+builder.Services.AddSingleton<IDataAccess, SqlDb>();
 
 var app = builder.Build();
 
