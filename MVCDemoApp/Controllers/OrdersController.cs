@@ -68,5 +68,14 @@ namespace MVCDemoApp.Controllers
            
             return View(displayModel);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(int id, string orderName)
+        {
+
+            await _orderData.UpdateOrderName(id, orderName);
+
+            return RedirectToAction("Display", new { id });
+        }
     }
 }

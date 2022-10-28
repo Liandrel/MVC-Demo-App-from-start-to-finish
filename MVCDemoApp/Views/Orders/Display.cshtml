@@ -17,7 +17,7 @@ else
             <tbody>
                 <tr>
                     <td><strong>Order Name</strong></td>
-                    <td>@Html.DisplayFor(modelItem => Model.Order.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => Model.Order.OrderName)</td>
                 </tr>
                 <tr>
                     <td><strong>Order Date</strong></td>
@@ -37,4 +37,17 @@ else
                 </tr>
             </tbody>
         </table>
+
+            <h3>Change Order Name</h3>
+
+            <form asp-action="Update">
+                <input name="id" value="@Model.Order.Id" type="hidden"/>
+                <div class="form-group">
+                    <label class="control-label">Order Name</label>
+                    <input name="orderName" value="@Model.Order.OrderName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update Order Name" class="btn btn-primary mt-1" />
+                </div>
+            </form>
 }
