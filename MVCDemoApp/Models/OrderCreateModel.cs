@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MVCDemoApp.Models
 {
-    public class CreateOrderModel
+    public class OrderCreateModel
     {
         public OrderModel Order { get; set; } = new();
 

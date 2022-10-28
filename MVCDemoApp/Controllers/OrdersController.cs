@@ -26,7 +26,7 @@ namespace MVCDemoApp.Controllers
         {
             var food = await _foodData.GetFood();
 
-            CreateOrderModel model = new();
+            OrderCreateModel model = new();
 
             food.ForEach(x =>
             {
