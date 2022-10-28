@@ -6,7 +6,7 @@ using MVCDemoApp.Models;
 
 namespace MVCDemoApp.Controllers
 {
-    public class OrdersController : Controller
+    public class OrdersController : BaseController
     {
         private readonly IOrderData _orderData;
         private readonly IFoodData _foodData;
