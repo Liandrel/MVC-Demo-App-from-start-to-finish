@@ -77,5 +77,20 @@ namespace MVCDemoApp.Controllers
 
             return RedirectToAction("Display", new { id });
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var order = await _orderData.GetOrderById(id);
+
+            return View(order);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(OrderModel order)
+        {
+            await _orderData.DeleteOrder(order.Id);
+
+            return RedirectToAction("Create");
+        }
     }
 }
